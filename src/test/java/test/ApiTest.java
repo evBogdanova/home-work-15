@@ -29,8 +29,6 @@ public class ApiTest {
                 .body("support.url", is("https://reqres.in/#support-heading"))
                 .body("support.text", is("To keep ReqRes free, contributions towards server " +
                         "costs are appreciated!"));
-
-
     }
 
     @Test
@@ -87,5 +85,4 @@ public class ApiTest {
                 .statusCode(400)
                 .body("error", is("Missing password"));
     }
-
 }
