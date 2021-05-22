@@ -47,11 +47,11 @@ public class ApiTest {
                 .get("api/users?page=2")
                 .then()
                 .statusCode(200)
-                .body("data.id[0]", is(7))
-                .body("data.email[0]", is("michael.lawson@reqres.in"))
-                .body("data.first_name[0]", is("Michael"))
-                .body("data.last_name[0]", is("Lawson"))
-                .body("data.avatar[0]", is("https://reqres.in/img/faces/7-image.jpg"))
+                .body("data.id.first()", is(7))
+                .body("data.email.first()", is("michael.lawson@reqres.in"))
+                .body("data.first_name.first()", is("Michael"))
+                .body("data.last_name.first()", is("Lawson"))
+                .body("data.avatar.first()", is("https://reqres.in/img/faces/7-image.jpg"))
                 .body("support.url", is("https://reqres.in/#support-heading"))
                 .body("support.text", is("To keep ReqRes free, contributions towards server " +
                         "costs are appreciated!"));
@@ -64,11 +64,11 @@ public class ApiTest {
                 .get("api/unknown")
                 .then()
                 .statusCode(200)
-                .body("data.id[0]", is(1))
-                .body("data.name[0]", is("cerulean"))
-                .body("data.year[0]", is(2000))
-                .body("data.color[0]", is("#98B2D1"))
-                .body("data.pantone_value[0]", is("15-4020"))
+                .body("data.id.first()", is(1))
+                .body("data.name.first()", is("cerulean"))
+                .body("data.year.first()", is(2000))
+                .body("data.color.first()", is("#98B2D1"))
+                .body("data.pantone_value.first()", is("15-4020"))
                 .body("support.url", is("https://reqres.in/#support-heading"))
                 .body("support.text", is("To keep ReqRes free, contributions towards server " +
                         "costs are appreciated!"));
